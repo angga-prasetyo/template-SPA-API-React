@@ -1,0 +1,24 @@
+.ct_error_boundary {
+  background-color: ctColor.$ctColorDanger--2;
+  border: 1px solid ctColor.$ctColorDanger--5;
+  @extend .p--4;
+  @extend .m--2;
+  @extend .radius--1;
+
+  &__title,
+  &__details,
+  &__error-text,
+  &__error-stack {
+    color: ctColor.$ctColorDanger--5;
+  }
+
+  &__details {
+    @extend .mt--1;
+    cursor: pointer;
+  }
+
+  &__error-text,
+  &__error-stack {
+    cursor: text;
+  }
+}

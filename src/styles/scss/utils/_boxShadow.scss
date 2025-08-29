@@ -1,0 +1,60 @@
+// Box Shadow
+// -------------------------------------------------------------
+// Reusable box shadow utilities throughout the design system
+
+// This is basically an utilities for box-shadow to keep the
+// consistency between component. The default value for color
+// is Color Neutral #4 and default opacity should be 0.075,
+// however, we can change it to whatever we like or match it with the
+// design system. To use it, import it in scss with `@use` and then
+// extend it with `@extend`. for example, `@extend .shadow--md`.
+
+// Or you can use it on `className` like tailwind, just import it
+// on JSX/TSX file and use it.
+
+@use '@/styles/scss/variables/colors' as ctColor;
+
+$default_shadow_color: ctColor.$ctColorNeutral--2;
+$default_shadow_opacity: 0.75;
+$dark_shadow_color: ctColor.$ctColorPrimary--2;
+
+.shadow {
+  box-shadow: 0 0.125rem 0.25rem
+    rgba($default_shadow_color, $default_shadow_opacity) !important;
+  &--none {
+    box-shadow: none !important;
+  }
+  &--sm {
+    box-shadow: 0 0.125rem 0.25rem
+      rgba($default_shadow_color, $default_shadow_opacity) !important;
+  }
+  &--md {
+    box-shadow: 0 0.5rem 1rem
+      rgba($default_shadow_color, $default_shadow_opacity) !important;
+  }
+  &--lg {
+    box-shadow: 0 1rem 3rem rgba($default_shadow_color, $default_shadow_opacity) !important;
+  }
+}
+
+.dark {
+  .shadow,
+  &.shadow {
+    box-shadow: 0 0.125rem 0.25rem
+      rgba($dark_shadow_color, $default_shadow_opacity) !important;
+    &--none {
+      box-shadow: none !important;
+    }
+    &--sm {
+      box-shadow: 0 0.125rem 0.25rem
+        rgba($dark_shadow_color, $default_shadow_opacity) !important;
+    }
+    &--md {
+      box-shadow: 0 0.5rem 1rem
+        rgba($dark_shadow_color, $default_shadow_opacity) !important;
+    }
+    &--lg {
+      box-shadow: 0 1rem 3rem rgba($dark_shadow_color, $default_shadow_opacity) !important;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+// Padding
+// -------------------------------------------------------------
+// Reusable padding utilities throughout the design system
+
+// This is basically an utilities for padding to keep the
+// consistency between component. The default value is 8,
+// however we can change it to whatever we like or match
+// it with the  design system. To use it, import it in
+// scss with `@use` and then extend it with `@extend`.
+// for example, `@extend .p--1`.
+
+// Or you can use it on `className` like tailwind, just import it
+// on JSX/TSX file and use it.
+
+$default_padding: 8;
+
+.p {
+  padding: #{$default_padding}px !important;
+  &--none {
+    padding: 0px !important;
+  }
+  &--0 {
+    padding: #{calc($default_padding / 2)}px !important;
+  }
+
+  @for $i from 1 through 10 {
+    &--#{$i} {
+      padding: #{($i * $default_padding)}px !important;
+    }
+  }
+
+  &l {
+    padding-left: #{$default_padding}px !important;
+    &--none {
+      padding-left: 0px !important;
+    }
+    &--0 {
+      padding-left: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-left: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+
+  &t {
+    padding-top: #{$default_padding}px !important;
+    &--none {
+      padding-top: 0px !important;
+    }
+    &--0 {
+      padding-top: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-top: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+
+  &r {
+    padding-right: #{$default_padding}px !important;
+    &--none {
+      padding-right: 0px !important;
+    }
+    &--0 {
+      padding-right: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-right: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+
+  &b {
+    padding-bottom: #{$default_padding}px !important;
+    &--none {
+      padding-bottom: 0px !important;
+    }
+    &--0 {
+      padding-bottom: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-bottom: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+
+  &y {
+    padding-top: #{$default_padding}px !important;
+    padding-bottom: #{$default_padding}px !important;
+    &--none {
+      padding-top: 0px !important;
+      padding-bottom: 0px !important;
+    }
+    &--0 {
+      padding-top: #{calc($default_padding / 2)}px !important;
+      padding-bottom: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-top: #{($i * $default_padding)}px !important;
+        padding-bottom: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+
+  &x {
+    padding-left: #{$default_padding}px !important;
+    padding-right: #{$default_padding}px !important;
+    &--none {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    &--0 {
+      padding-left: #{calc($default_padding / 2)}px !important;
+      padding-right: #{calc($default_padding / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        padding-left: #{($i * $default_padding)}px !important;
+        padding-right: #{($i * $default_padding)}px !important;
+      }
+    }
+  }
+}
