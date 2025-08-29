@@ -1,0 +1,64 @@
+{
+  "name": "template-react-spa-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "concurrently --kill-others-on-fail -r \"tsc --noEmit\" \"vite build\"",
+    "serve": "vite preview",
+    "lint": "eslint ./src --ext js,jsx,ts,tsx --fix --ignore-path ./.gitignore --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "antd": "^5.26.7",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.10",
+    "lodash": "^4.17.21",
+    "query-string": "^8.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-router-dom": "^6.30.0",
+    "usehooks-ts": "^3.1.1",
+    "zustand": "^4.5.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.8.1",
+    "@commitlint/config-conventional": "^17.8.1",
+    "@commitlint/cz-commitlint": "^17.8.1",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "commitizen": "^4.3.1",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.1",
+    "eslint-import-resolver-typescript": "^3.10.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "husky": "^8.0.3",
+    "sass-embedded": "^1.89.2",
+    "sharp": "^0.32.6",
+    "svgo": "^3.3.2",
+    "terser": "^5.39.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-compression2": "^0.10.6",
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^0.34.6"
+  },
+  "engines": {
+    "node": ">=18.14.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
+}

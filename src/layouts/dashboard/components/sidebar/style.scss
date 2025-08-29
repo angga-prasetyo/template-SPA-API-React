@@ -1,0 +1,63 @@
+.ct_layout_dashboard__sidebar {
+  border-right: thin solid ctColor.$ctColorNeutral--1;
+
+  .trigger {
+    transition: background-color 0.2s ease;
+    @extend .p--1;
+    .ant-btn {
+      width: 100%;
+    }
+  }
+
+  .menu {
+    height: #{calc(100dvh - ctHeight.$header - 64px)};
+    overflow-y: scroll;
+    border-inline-end: none !important;
+
+    @extend .px--1;
+    @extend .hide-scrollbar;
+  }
+
+  .ant-menu-item-selected {
+    font-weight: 600;
+
+    svg,
+    rect,
+    circle,
+    path {
+      color: ctColor.$ctColorPrimary--main;
+      stroke: ctColor.$ctColorPrimary--main;
+    }
+  }
+
+  .ant-drawer-header {
+    height: ctHeight.$header;
+    flex: none;
+    border-bottom: thin solid ctColor.$ctColorNeutral--1;
+
+    @extend .shadow--md;
+  }
+  .ant-drawer-body {
+    @extend .p--1;
+  }
+
+  &.dark {
+    .ant-drawer-header {
+      @extend .shadow--md;
+    }
+  }
+}
+
+.ant-menu-submenu-popup {
+  .ant-menu-item-selected {
+    font-weight: 600;
+
+    svg,
+    rect,
+    circle,
+    path {
+      color: ctColor.$ctColorPrimary--main;
+      stroke: ctColor.$ctColorPrimary--main;
+    }
+  }
+}

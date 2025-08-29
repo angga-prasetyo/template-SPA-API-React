@@ -1,0 +1,129 @@
+// Margin
+// -------------------------------------------------------------
+// Reusable margin utilities throughout the design system
+
+// This is basically an utilities for margin to keep the
+// consistency between component. The default value is 8,
+// however we can change it to whatever we like or match
+// it with the  design system. To use it, import it in
+// scss with `@use` and then extend it with `@extend`.
+// for example, `@extend .ml--none`.
+
+// Or you can use it on `className` like tailwind, just import it
+// on JSX/TSX file and use it.
+
+$default_margin: 8;
+
+.m {
+  margin: #{$default_margin}px !important;
+  &--none {
+    margin: 0px !important;
+  }
+  &--0 {
+    margin: #{calc($default_margin / 2)}px !important;
+  }
+
+  @for $i from 1 through 10 {
+    &--#{$i} {
+      margin: #{($i * $default_margin)}px !important;
+    }
+  }
+
+  &l {
+    margin-left: #{$default_margin}px !important;
+    &--none {
+      margin-left: 0px !important;
+    }
+    &--0 {
+      margin-left: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-left: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+
+  &t {
+    margin-top: #{$default_margin}px !important;
+    &--none {
+      margin-top: 0px !important;
+    }
+    &--0 {
+      margin-top: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-top: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+
+  &r {
+    margin-right: #{$default_margin}px !important;
+    &--none {
+      margin-right: 0px !important;
+    }
+    &--0 {
+      margin-right: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-right: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+
+  &b {
+    margin-bottom: #{$default_margin}px !important;
+    &--none {
+      margin-bottom: 0px !important;
+    }
+    &--0 {
+      margin-bottom: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-bottom: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+
+  &y {
+    margin-top: #{$default_margin}px !important;
+    margin-bottom: #{$default_margin}px !important;
+    &--none {
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+    }
+    &--0 {
+      margin-top: #{calc($default_margin / 2)}px !important;
+      margin-bottom: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-top: #{($i * $default_margin)}px !important;
+        margin-bottom: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+
+  &x {
+    margin-left: #{$default_margin}px !important;
+    margin-right: #{$default_margin}px !important;
+    &--none {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+    &--0 {
+      margin-left: #{calc($default_margin / 2)}px !important;
+      margin-right: #{calc($default_margin / 2)}px !important;
+    }
+    @for $i from 1 through 10 {
+      &--#{$i} {
+        margin-left: #{($i * $default_margin)}px !important;
+        margin-right: #{($i * $default_margin)}px !important;
+      }
+    }
+  }
+}
