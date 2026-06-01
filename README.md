@@ -67,7 +67,7 @@ pnpm test
 
 ## Screenshots
 
-![App Demo](https://github.com/user-attachments/assets/f53fdc3d-209b-45f3-9dce-11731f260713)
+<video src="https://github.com/user-attachments/assets/f53fdc3d-209b-45f3-9dce-11731f260713" controls width="640"></video>
 
 ---
 
