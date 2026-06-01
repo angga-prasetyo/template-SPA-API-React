@@ -1,0 +1,32 @@
+// Border Radius
+// -------------------------------------------------------------
+// Reusable border radius utilities throughout the design system
+
+// This is basically an utilities for border radius to keep the
+// consistency between component. The default value is 8, however
+// we can change it to whatever we like or match it with the
+// design system. To use it, import it in scss with `@use` and then
+// extend it with `@extend`. for example, `@extend .radius--5`.
+
+// Or you can use it on `className` like tailwind, just import it
+// on JSX/TSX file and use it.
+
+$default_radius: 8;
+
+.radius {
+  border-radius: #{$default_radius}px;
+  &--none {
+    border-radius: 0px;
+  }
+  &--0 {
+    border-radius: #{calc($default_radius / 2)}px;
+  }
+  &--circle {
+    border-radius: 999px;
+  }
+  @for $i from 1 through 10 {
+    &--#{$i} {
+      border-radius: #{($i * $default_radius)}px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:where(.ant-dropdown) {
+  z-index: ctZindex.$dropdown !important;
+}
+
+.ant-drawer-content,
+.ant-card,
+.ant-table,
+#content_container {
+  @extend .transition-background-color;
+}
+
+.ant-drawer-right {
+  .ant-drawer-content {
+    border-left: thin solid ctColor.$ctColorNeutral--1;
+    @media only screen and (width < bp.$md) {
+      border-left: none;
+    }
+  }
+}
+.ant-drawer-left {
+  .ant-drawer-content {
+    border-right: thin solid ctColor.$ctColorNeutral--1;
+  }
+}
+.ant-drawer-header {
+  @extend .shadow--md;
+
+  .anticon-close {
+    color: ctColor.$ctColorNeutral--main;
+    font-size: 24px;
+  }
+}
+.ant-drawer-content {
+  @extend .shadow--lg;
+}
+.dark {
+  .ant-drawer-header {
+    .anticon-close {
+      color: ctColor.$ctColorNeutral--0;
+    }
+  }
+}

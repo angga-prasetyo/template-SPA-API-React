@@ -1,0 +1,15 @@
+.ct_table {
+  .ant-pagination-total-text {
+    position: absolute;
+    left: 0;
+  }
+  .ant_pagination {
+    background-color: white;
+    margin: 0 !important;
+    padding: 20px;
+
+    :where(.ant-pagination-options) {
+      margin-left: auto !important;
+    }
+  }
+}

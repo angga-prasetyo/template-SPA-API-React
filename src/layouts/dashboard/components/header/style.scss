@@ -1,0 +1,39 @@
+.ct_layout_dashboard__header {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  border-bottom: thin solid ctColor.$ctColorNeutral--1;
+  height: ctHeight.$header;
+  z-index: ctZindex.$header;
+  @extend .px--3;
+  @extend .transition-background-color;
+  @extend .shadow--md;
+
+  .left_container {
+    width: ctWidth.$menuSidebar;
+
+    @media only screen and (width < bp.$md) {
+      width: auto;
+    }
+  }
+
+  .right_container {
+    .anticon {
+      font-size: 24px;
+    }
+  }
+}
+
+.settings_drawer {
+  .ant-drawer-body {
+    @extend .p--3;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+}

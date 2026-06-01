@@ -1,0 +1,111 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop, master]
+  pull_request:
+    branches: [main, develop, master]
+
+jobs:
+  lint:
+    name: ESLint
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+        env:
+          HUSKY: 0
+
+      - name: Build native dependencies
+        run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
+
+      - name: Run ESLint
+        run: pnpm exec eslint ./src --ext js,jsx,ts,tsx --ignore-path ./.gitignore --report-unused-disable-directives --max-warnings 0
+
+  unit-test:
+    name: Unit Test (Vitest)
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+        env:
+          HUSKY: 0
+
+      - name: Build native dependencies
+        run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
+
+      - name: Run Vitest with coverage
+        run: pnpm exec vitest run --coverage
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 30
+
+  e2e-test:
+    name: E2E Test (Playwright)
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Enable corepack
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+        env:
+          HUSKY: 0
+
+      - name: Build native dependencies
+        run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
+
+      - name: Build app
+        run: pnpm build
+        env:
+          VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
+
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+
+      - name: Run Playwright tests
+        run: pnpm exec playwright test
+        env:
+          VITE_BASE_URL: ${{ secrets.VITE_BASE_URL }}
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

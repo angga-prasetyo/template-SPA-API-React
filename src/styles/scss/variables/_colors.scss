@@ -1,0 +1,31 @@
+// Colors
+// -----------------------------------------------------------
+// Color palettes defined for use throughout the design system.
+
+// CAUTION! If you want to change the value, or want to
+// add more colors, please sync up in `./src/constants/
+// theme/colors.constants.ts` too to prevent confusion.
+
+$ctColorPrimary--main: #1069b8;
+$ctColorPrimary--0: #e7f0f8;
+$ctColorPrimary--1: #afcde7;
+$ctColorPrimary--2: #609bd0;
+$ctColorPrimary--3: #0d5799;
+$ctColorPrimary--4: #0b467b;
+$ctColorPrimary--5: #08355c;
+
+$ctColorDanger--main: #ee5046;
+$ctColorDanger--0: #fff3f2;
+$ctColorDanger--1: #fcdcda;
+$ctColorDanger--2: #f8b9b5;
+$ctColorDanger--3: #f1736b;
+$ctColorDanger--4: #cd4239;
+$ctColorDanger--5: #ac342d;
+
+$ctColorNeutral--main: #31353b;
+$ctColorNeutral--0: #ffffff;
+$ctColorNeutral--1: #d6d7d8;
+$ctColorNeutral--2: #adaeb1;
+$ctColorNeutral--3: #838689;
+$ctColorNeutral--4: #272a2f;
+$ctColorNeutral--5: #141518;

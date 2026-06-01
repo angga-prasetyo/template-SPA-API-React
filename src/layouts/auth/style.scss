@@ -1,0 +1,39 @@
+.ct_layout_auth {
+  &__main {
+    min-height: 100dvh;
+    display: flex;
+    @extend .p--4;
+  }
+
+  &__card {
+    margin: auto;
+    max-width: 512px;
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: column;
+    @extend .p--6;
+    @extend .radius;
+    @extend .shadow--md;
+  }
+
+  &__logo {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    @extend .mt--1;
+    text-align: center;
+  }
+
+  &__inner {
+    max-width: bp.$xs;
+    width: 100%;
+    @extend .mt--3;
+  }
+}

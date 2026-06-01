@@ -1,0 +1,39 @@
+.ct_layout_dashboard {
+  height: 100dvh;
+  overflow-y: hidden;
+
+  #content_container {
+    width: 100%;
+
+    .ct_layout_dashboard__breadcrumb {
+      @extend .p--2;
+    }
+
+    #content {
+      height: #{calc(100dvh - ctHeight.$header - 32px)};
+      overflow-y: scroll;
+
+      @extend .p--2;
+      @extend .pb--7;
+      @extend .hide-scrollbar;
+    }
+  }
+
+  &__root_skeleton {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.dark {
+    .menu_trigger {
+      svg,
+      rect,
+      circle,
+      path {
+        color: ctColor.$ctColorPrimary--1;
+        stroke: ctColor.$ctColorPrimary--1;
+      }
+    }
+  }
+}

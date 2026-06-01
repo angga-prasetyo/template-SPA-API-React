@@ -1,0 +1,11 @@
+.ct_users_form {
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+  }
+  &__dual {
+    display: flex;
+    gap: 16px;
+  }
+}
