@@ -24,8 +24,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
-        env:
-          HUSKY: 0
 
       - name: Build native dependencies
         run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
@@ -50,8 +48,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
-        env:
-          HUSKY: 0
 
       - name: Build native dependencies
         run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
@@ -84,8 +80,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
-        env:
-          HUSKY: 0
 
       - name: Build native dependencies
         run: pnpm rebuild esbuild @swc/core @parcel/watcher sharp unrs-resolver
