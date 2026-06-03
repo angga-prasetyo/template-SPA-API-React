@@ -1,5 +1,5 @@
 {
-  "name": "template-react-spa-vite",
+  "name": "template-spa-api-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,7 +19,6 @@
     "axios": "^1.16.1",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
-    "lodash": "^4.17.21",
     "query-string": "^8.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
