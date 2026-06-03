@@ -10,7 +10,7 @@
     "lint": "eslint ./src --ext js,jsx,ts,tsx --fix --ignore-path ./.gitignore --report-unused-disable-directives --max-warnings 0",
     "coverage": "vitest run --coverage",
     "e2e": "pnpm build && playwright test --ui",
-    "test": "eslint ./src --ext js,jsx,ts,tsx --fix --ignore-path ./.gitignore --report-unused-disable-directives --max-warnings 0 && vitest run --coverage && playwright test"
+    "test": "eslint ./src --ext js,jsx,ts,tsx --fix --ignore-path ./.gitignore --report-unused-disable-directives --max-warnings 0 && vitest run --coverage && pnpm build && playwright test"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
@@ -50,7 +50,6 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "jsdom": "^29.1.1",
     "path": "^0.12.7",
-    "rollup-plugin-visualizer": "^7.0.1",
     "sass-embedded": "^1.89.2",
     "sharp": "^0.32.6",
     "svgo": "^3.3.2",

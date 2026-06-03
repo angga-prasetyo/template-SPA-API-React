@@ -1,7 +1,6 @@
 import path from 'path';
 
 import react from '@vitejs/plugin-react-swc';
-import { visualizer } from 'rollup-plugin-visualizer';
 import { compression } from 'vite-plugin-compression2';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import svgr from 'vite-plugin-svgr';
@@ -39,12 +38,6 @@ export default () => {
       compression({
         algorithm: 'brotliCompress',
         exclude: [/\.(br)$/, /\.(gz)$/],
-      }),
-      visualizer({
-        open: true,
-        gzipSize: true,
-        brotliSize: true,
-        filename: 'stats.local.html',
       }),
     ],
     resolve: {
